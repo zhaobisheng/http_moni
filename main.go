@@ -171,13 +171,13 @@ func MoniHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func httpPOST(url string, header map[string]string, data string) (resp *http.Response, err error) {
-	/*tr := &http.Transport{
+	tr := &http.Transport{
 		TLSClientConfig: &tls.Config{InsecureSkipVerify: true},
 	}
 
-	client := &http.Client{Transport: tr}*/
+	client := &http.Client{Transport: tr}
 	//fmt.Println("data:", data)
-	client := &http.Client{}
+	//client := &http.Client{}
 	request, err := http.NewRequest("POST", url, bytes.NewReader([]byte(data)))
 	if err != nil {
 		fmt.Println("err:", err)
@@ -199,7 +199,11 @@ func httpGET(url string, header map[string]string, data url.Values) (resp *http.
 	for name, value := range data {
 		url = url + name + "=" + value[0] + "&"
 	}
-	client := &http.Client{}
+	//client := &http.Client{}
+	tr := &http.Transport{
+		TLSClientConfig: &tls.Config{InsecureSkipVerify: true},
+	}
+	client := &http.Client{Transport: tr}
 	request, _ := http.NewRequest("GET", url, nil)
 	for key, value := range header {
 		request.Header.Add(key, value)
@@ -207,11 +211,8 @@ func httpGET(url string, header map[string]string, data url.Values) (resp *http.
 	request.Header.Set("Connection", "Keep-Alive")
 	fmt.Println(url)
 	resp, err = client.Do(request)
-	/*tr := &http.Transport{
-		TLSClientConfig: &tls.Config{InsecureSkipVerify: true},
-	}
-	client := &http.Client{Transport: tr}
-	resp, err = client.Get(url)*/
+	/*
+		resp, err = client.Get(url)*/
 	//resp, err = http.Get(url)
 	return resp, err
 
