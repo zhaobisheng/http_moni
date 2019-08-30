@@ -1,0 +1,932 @@
+<html> 
+  <head>
+    <title>在线HTTP接口测试 - HTTP GET/POST模拟请求测试工具 - Bison在线工具</title>
+    <link rel="author" href="https://plus.google.com/117054904202244414422?rel=author" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="bookmark" href="/favicon.ico" />
+    <script>function async_load(url) {
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = url;
+        var x = document.getElementsByTagName('script')[0];
+        x.parentNode.insertBefore(s, x);
+      }
+      function aysnc_load_js(url) {
+        if (window.attachEvent) window.attachEvent('onload',
+        function() {
+          async_load(url)
+        });
+        else window.addEventListener('load',
+        function() {
+          async_load(url)
+        },
+        false);
+      }
+
+      function async_do_func(func) {
+        if (window.attachEvent) window.attachEvent('onload', func);
+        else window.addEventListener('load', func, false);
+      }</script>
+    <link rel="apple-touch-icon" href="http://cdn.atool.org/res/touch-icon-iphone.png" />
+    <link rel="stylesheet" href="res/bijou.min.css" />
+    <link rel="stylesheet" href="res/style.new.css" />
+    
+  
+    
+    <meta name="Keywords" content="aTool,在线工具,接口测试,HTTP接口测试,GET/POST模拟请求测试工具" />
+    <meta name="Description" content="aTool,在线工具,本工具提供任意接口的HTTP GET和POST测试，并且提供测试返回值，接口返回时间，后续会对异常状态数据进行获取。" />
+    <style type="text/css">thead {background-color: #f3f3f3;} .params_value, .headers_value {width: 75%} button.tiny{padding: 2px 2px;margin-bottom:5px;} .content-table td{word-wrap:break-word;white-space:pre-wrap;word-break: break-all;padding:3px 10px;} .content-table tr {line-height: 17px;} #params_table, #headers_table {margin-bottom: 15px;} #params_table thead tr, #headers_table thead tr, #response_table thead tr {line-height: 12px;}</style>
+    <link href="res/JSONFormatter.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="res/jquery.dialogbox.css" /></head>
+  
+  <body>
+    <script language="javascript" type="text/javascript">function addfavor(url, title) {
+        var ua = navigator.userAgent.toLowerCase();
+        if (ua.indexOf("msie 8") > -1) {
+          external.AddToFavoritesBar(url, title, '');
+        } else {
+          try {
+            window.external.addFavorite(url, title);
+          } catch(e) {
+            try {
+              window.sidebar.addPanel(title, url, '');
+            } catch(e) {
+              alert("加入收藏失败，请使用键盘Ctrl+D进行添加");
+            }
+          }
+        }
+        return false;
+      }
+
+      function qzone_login() {
+        document.getElementById("oauth_login").innerHTML = '<div class="full_screen_bg" style="z-index:100000000" onclick="this.parentNode.innerHTML=\' \';"></div><div id="login_div" style="position:fixed;width:700px;height:400px;top:50%;left:50%;padding:0;margin:0;margin-top:-200px;margin-left:-350px;z-index:100000001;_position:absolute;_margin:0" align="center"><a href="javascript:;" onclick="this.parentNode.parentNode.innerHTML=\' \';" class="popup_close">×</a><iframe id="login_frame" name="login_frame" frameborder="0" scrolling="auto" width="100%" height="100%" src="/oauth/qq_login.php"></iframe></div>';
+        return false;
+      }</script>
+    <style type="text/css">.navbar .webmaster a { color:red; font-weight: bold; } .shake_logo { border: none; } .full_screen_bg{position:fixed;top:0;right:0;bottom:0;left:0;background:#f1f1f1;background:rgba(0,0,0,0.39)} #site_menu { display:block; overflow:hidden; } .sub_menus {width: 510px;} .sub_menus li a {color: #ddd;overflow:hidden;} /*.sub_menus li a:hover {color: #ccc;}*/ .sub_menu_title {background-color: rgba(248, 248, 248, 0.81)!important;width: 510px;height: 20px!important;line-height: 20px!important;} .sub_menu_title a {color: #000!important;} #menu_list {Z-INDEX: 999999;} #menu_list,#menu_list UL { padding:0px; margin:0px; list-style-type: none; } #menu_list LI,#menu_list a{HEIGHT: 40px; LINE-HEIGHT: 40px;FLOAT: left;} #menu_list LI {padding:0px; MARGIN: 0px; margin-left: -2px;} #menu_list a{ DISPLAY: block; margin: 0 10px; TEXT-ALIGN: center; } #menu_list LI:hover,#menu_list A:hover { color:#FF7B0E; } #menu_list LI a:hover { text-decoration: none; } #menu_list LI ul li a:hover{ background-image:none;} #menu_list LI UL {display: none; POSITION: absolute} #menu_list LI UL li,#menu_list LI UL li a{ line-height:24px; height:24px; background-image:none;} #menu_list LI:hover UL,#menu_list LI.sfhover UL { MARGIN-TOP: 37px; padding:4px; Z-INDEX: 5; FILTER: alpha (opacity=80); MARGIN-LEFT: 0px; BORDER-BOTTOM: #0D1C31 1px solid; POSITION: absolute; background-color:#0D182A; opacity: 0.80; +CLEAR: both; +MARGIN-TOP: 0px; _clear:both; _margin-top:0px; display: block; } #menu_list LI:hover UL LI A,#menu_list LI.sfhover UL LI A{ DISPLAY: block; PADDING: 0px 0px 0px 8px; FONT-WEIGHT: normal; FONT-SIZE: 13px; MARGIN: 0px; TEXT-TRANSFORM: none; WIDTH: 120px; /*color:#aCA7C7; */ TEXT-ALIGN: left; } #menu_list LI:hover UL LI A:hover,#menu_list LI.sfhover UL LI A:hover { BACKGROUND-COLOR: #0D182A } #menu_list UL LI UL {DISPLAY: none;} #menu_list UL LI UL LI A:hover { MARGIN-TOP: -2px; DISPLAY: block; FILTER: alpha (opacity=85); MARGIN-LEFT: 50px; WIDTH: 105px; POSITION: absolute; BACKGROUND-COLOR: #666; } .sub_menus_1 {margin-left: -40px!important;} .sub_menus_2 {margin-left: -120px!important;} .sub_menus_3 {margin-left: -200px!important;} .sub_menus_4 {margin-left: -290px!important;} #menu_list .new {color:#FF9292;}</style>
+    <script type="text/javascript">var sfHover = function() {
+        var sfEls = document.getElementById("site_menu").getElementsByTagName("LI");
+        for (var i = 0; i < sfEls.length; i++) {
+          sfEls[i].onmouseover = function() {
+            this.className += " sfhover";
+          }
+          sfEls[i].onmouseout = function() {
+            this.className = this.className.replace(new RegExp(" sfhover\\b"), "");
+          }
+        }
+      }
+      if (window.attachEvent) window.attachEvent("onload", sfHover);</script>
+    <div id="oauth_login"></div>
+    <div class='navbar fixed'>
+      <div class='container' id="site_menu">
+        <h2 class='pull-left'>
+          <a href="/" style="color:#000;" title="在线工具">
+            <img class="shake_logo" title="在线工具" alt="在线工具" src="res/baidu_jgylogo3.gif" style="height: 40px;"></a>
+        </h2>
+        <ul id="menu_list" class='pull-right'>
+          <li>
+            <a class="green strong" href="javascript:void(0)">Bison超级请求模拟</a>
+            <ul class="sub_menus sub_menus_1">
+              <li class="sub_menu_title">
+                <a>广告位10086</a>
+              </li>
+              <li>
+                <a class="new" target="_blank" href="#">广告位1</a></li>
+              <li>
+                <a class="new" target="_blank" href="#">广告位2</a></li>
+            </ul>
+          </li>
+          
+          <li>
+            <a href="#">快捷页面</a>
+            <ul class="sub_menus sub_menus_1">
+              <li class="sub_menu_title">
+                <a>快捷工具</a>
+              </li>
+              <li>
+                <a class="new tool" target="_blank" href="/index11.html">垃圾模拟请求</a></li>
+              <li>
+                <a class="new tool" target="_blank" href="/txt.html">小说爬取</a></li>
+             
+              
+              <li class="sub_menu_title">
+                <a>网站制作</a>
+              </li>
+               <li>
+                <a class=" tool" target="_blank" href="/upload.html">文件上传</a></li>
+              <li>
+                <a class="new tool" target="_blank" href="/down.html">文件下载</a></li>
+             
+              
+            </ul>
+          </li>
+          <li>
+            <a target="_blank" href="/bs">文件列表</a>
+            <ul class="sub_menus sub_menus_2">
+              <li class="sub_menu_title">
+                <a>广告位</a>
+              </li>
+              <li>
+                <a class="new tool" href="#">广告位</a></li>
+
+              <li class="sub_menu_title">
+                <a>广告位</a>
+              </li>
+              <li>
+                <a class="tool" href="#">广告位</a></li>
+
+              <li class="sub_menu_title">
+                <a>主机相关</a>
+              </li>
+              <li>
+                <a class="new tool" href="#">广告位</a></li>
+
+              <li class="sub_menu_title">
+                <a>网站相关</a>
+              </li>
+              <li>
+                <a class="new tool" href="#">广告位</a></li>
+
+            </ul>
+          </li>
+          <li>
+            <a href="#">广告位</a>
+            <ul class="sub_menus sub_menus_3">
+              <li class="sub_menu_title">
+                <a>前端开发工具</a>
+              </li>
+              <li>
+                <a class="tool" href="#">广告位</a></li>
+
+              <li class="sub_menu_title">
+                <a>在线代码转换</a>
+              </li>
+              <li>
+                <a class="tool" href="#">广告位</a></li>
+
+              <li class="sub_menu_title">
+                <a>数学分析统计工具</a>
+              </li>
+              <li>
+                <a class=" tool" href="#">广告位</a></li>
+
+              <li class="sub_menu_title">
+                <a>加密解密相关</a>
+              </li>
+              <li>
+                <a class="tool" href="#">广告位</a></li>
+ 
+              <li class="sub_menu_title">
+                <a>中文汉字相关</a>
+              </li>
+              <li>
+                <a class="new tool" href="#">广告位</a></li>
+
+              <li class="sub_menu_title">
+                <a>其他开发者工具</a>
+              </li>
+              <li>
+                <a class="tool" href="#">广告位</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">广告位</a>
+            <ul class="sub_menus sub_menus_4">
+              <li class="sub_menu_title">
+                <a>便民服务</a>
+              </li>
+              <li>
+                <a class="new tool" href="#">广告位</a></li>
+
+              <li class="sub_menu_title">
+                <a>娱乐学习</a>
+              </li>
+              <li>
+                <a class=" tool" href="#">广告位</a></li>
+
+              <li class="sub_menu_title">
+                <a>健康养生</a>
+              </li>
+              <li>
+                <a class=" tool" href="#">广告位</a></li>
+
+              <li class="sub_menu_title">
+                <a>其他</a>
+              </li>
+              <li>
+                <a class="tool" href="#">广告位</a></li>
+
+              <li class="sub_menu_title">
+                <a>在线小游戏</a>
+              </li>
+              <li>
+                <a class="new tool" href="#">广告位</a></li>
+             
+            </ul>
+          </li>
+          <li>
+            <a class="red strong" href="#">关于&合作</a></li>
+
+        </ul>
+      </div>
+    </div>
+    <div class='container'></div>
+    <style>@media only screen and (max-width: 767px) { #search_tools { display: none; } } #search_tools { align }</style>
+    <div class='container' style="margin-bottom: 15px;">
+      <form>
+        <div class="row">
+
+          <div class="span seven">
+            <input id="search_tools" class="input-text  pull-right" type="text" placeholder="搜索工具关键词，例如：广告位" /></div>
+        </div>
+      </form>
+      <div class='divider'></div>
+    </div>
+    <script src='res/horse.min.js'></script>
+    <link href='res/horse.min.css' rel='stylesheet' type='text/css' />
+    <script type="text/javascript">var tools = document.querySelectorAll("#menu_list a.tool");
+      var suggestions = [];
+      for (var i = 0; i < tools.length; i++) {
+        suggestions.push({
+          value: tools[i].href,
+          text: tools[i].innerText
+        });
+      }
+      horse(document.getElementById('search_tools'), {
+        suggestions: suggestions,
+        limit: 12,
+        onselect: function(input, li, selection) {
+          window.open(selection['value'], '_blank');
+        }
+      });</script>
+    <div class='container'>
+      <h3 class='explainer'>在线HTTP POST/GET接口测试工具 - Bison在线工具</h3>
+      <style type="text/css">#ad-blocks { margin: 10px 0; }</style>
+      <div id='hidead'></div>
+      <ul class="new_tools_list">
+        <li>2015-11-09 最新修改：增加https类型的url请求，目前支持http和https~。</li>
+        <li class="green">2015-10-15 最新修改：修改基本样式，增加header和body参数，增加返回值得header信息，采用codemirror作为返回数据的编辑器。</li>
+        
+          </ul>
+      <div class='divider'></div>
+      <form style="border: thin solid #A4AA04;padding:0 20px;">
+        <div class='row' id="params_start">
+          <div class="span one xs-three">
+            <select id="api_method" class="select">
+              <option value="GET">GET</option>
+              <option value="POST" selected="">POST</option>
+              <option value="PUT">PUT</option>
+              <option value="PATCH">PATCH</option>
+              <option value="DELETE">DELETE</option>
+              <option value="COPY">COPY</option>
+              <option value="HEAD">HEAD</option>
+              <option value="OPTIONS">OPTIONS</option>
+              <option value="LINK">LINK</option>
+              <option value="UNLINK">UNLINK</option>
+              <option value="PURGE">PURGE</option></select>
+          </div>
+          <div class='span five xs-six strong'>
+            <input type="text" class="input-text" id="http_url_input" title="HTTP接口URL" alt="HTTP接口URL" value="" placeholder="http://" /></div>
+          <button class='button success small' id="http_test" type="button">发送请求</button>
+          <button class='button danger small' id="copy_btn" type="button">复制结果</button>&nbsp;&nbsp;&nbsp;&nbsp;
+          <input type="checkbox" name="body_params" onclick="params_togg();" checked="checked">请求Body参数
+          <input type="checkbox" name="body_headers" onclick="headers_togg();" >请求Header</div>
+        <table id="params_table" class="table table-bordered">
+          <thead>
+            <tr>
+              <th width="35%">Body参数名称</th>
+              <th>Body参数值</th></tr>
+          </thead>
+          <tbody>
+            <tr id="params_end">
+              <td colspan="2">
+                <button class='button primary small' id="add_url_parameter" type="button">添加参数</button>
+                <button class='button success small' id="add_raw_url_parameter" type="button">RAW批量添加</button></td>
+            </tr>
+          </tbody>
+        </table>
+        <table id="headers_table" class="table table-bordered">
+          <thead>
+            <tr>
+              <th width="35%">Header名称</th>
+              <th>Header值</th></tr>
+          </thead>
+          <tbody>
+            <tr id="headers_end">
+              <td colspan="2">
+                <button class='button primary small' id="add_api_headers" type="button">添加Header</button></td>
+            </tr>
+          </tbody>
+        </table>
+        <table id="response_table" class="table table-bordered">
+          <thead>
+            <tr>
+              <th width="35%">Response Header</th>
+              <th>Response Body</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td valign="top" id="response_header" style="display:block;word-break: break-all;word-wrap: break-word;"></td>
+              <td valign="top">
+                <textarea id="output"></textarea>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </form>
+      <script src="res/jquery.min.js"></script>
+      <script type="text/javascript" src="res/jquery.zclip.min.js"></script>
+      <script src="res/JSONFormatter.js" type="text/javascript"></script>
+      <script src="res/jquery.cookie.min.js" type="text/javascript"></script>
+      <script type="text/javascript" src="res/jquery.dialogbox.js"></script>
+      <script>function params_togg() {
+          if ($("input[name=body_params]:checked") && $("input[name=body_params]:checked").length > 0) {
+            $("#params_table").show();
+            $.cookie("body_on", "on")
+          } else {
+            $("#params_table").hide();
+            $.cookie("body_on", "")
+          }
+        }
+
+        function headers_togg() {
+          if ($("input[name=body_headers]:checked").length && $("input[name=body_headers]:checked").length > 0) {
+            $("#headers_table").show();
+            $.cookie("header_on", "on")
+          } else {
+            $("#headers_table").hide();
+            $.cookie("header_on", "")
+          }
+        }
+        var result_text = "";
+        $("#copy_btn").zclip({
+          path: "res/ZeroClipboard_zclip.swf",
+          copy: function() {
+            return $('#output').val();
+          }
+        });
+
+        function add_parameter(cnt, name, value) {
+          if (name == "undefined" || name == null) {
+            name = ""
+          }
+          if (value == "undefined" || value == null) {
+            value = ""
+          }
+          $("#params_end").before('						<tr class="params_p" cnt="' + cnt + '">							<td>								<input class="params_name input-text" type="text" name="p_name_' + cnt + '" title="参数名称" alt="参数名称" value="' + name + '" maxlength="100"/>							</td>							<td>								<input class="params_value input-text" type="text" name="p_value_' + cnt + '" title="参数数值" alt="参数数值" value="' + value + '" maxlength="5000"/>								<button class="button danger tiny" onclick="javascript:del_param(this);" type="button">删除参数</button>							</td></tr>					')
+        }
+
+        function add_header(cnt, name, value) {
+          if (name == "undefined" || name == null) {
+            name = ""
+          }
+          if (value == "undefined" || value == null) {
+            value = ""
+          }
+          $("#headers_end").before('						<tr class="headers_p" cnt="' + cnt + '">							<td>								<input class="headers_name input-text" type="text" name="h_name_' + cnt + '" title="header名称" alt="header名称" value="' + name + '" maxlength="100"/>							</td>							<td>								<input class="headers_value input-text" type="text" name="h_value_' + cnt + '" title="header数值" alt="header数值" value="' + value + '" maxlength="5000"/>								<button class="button danger tiny" onclick="javascript:del_param(this);" type="button">删除参数</button>							</td></tr>					')
+        }
+
+        function get_all_parameter() {
+          var params = new Array();
+          $(".params_p").each(function() {
+            var cnt = $(this).attr("cnt");
+            var name = $(this).find("input[name=p_name_" + cnt + "]").val();
+            var value = $(this).find("input[name=p_value_" + cnt + "]").val();
+            if (is_empty(name) || is_empty(value)) {
+              return false
+            }
+            params.push({
+              name: name,
+              value: value
+            })
+          });
+          return params
+        }
+
+        function get_all_header() {
+          var headers = new Array();
+          $(".headers_p").each(function() {
+            var cnt = $(this).attr("cnt");
+            var name = $(this).find("input[name=h_name_" + cnt + "]").val();
+            var value = $(this).find("input[name=h_value_" + cnt + "]").val();
+            if (is_empty(name) || is_empty(value)) {
+              return false
+            }
+            headers.push({
+              name: name,
+              value: value
+            })
+          });
+          return headers
+        }
+        var param_cnt = 0;
+        $("#add_url_parameter").click(function() {
+          var input_len = $("#params_table input").size();
+          param_cnt++;
+          add_parameter(param_cnt, "", "")
+        });
+        $('#add_raw_url_parameter').click(function() {
+          $('body').dialogbox({
+            type: "text",
+            title: "批量添加Body参数",
+            message: "输入Raw参数，例如：id=123&sale=yes&deleted=0"
+          },
+          function($btn, $ans) {
+            if ($btn == "close") {
+              return;
+            } else if ($btn == "ok") {
+              var raw = $ans;
+              if (raw == null || raw == "") {
+                return;
+              }
+              var params = str_2_params(raw);
+              if (params) {
+                for (var i = 0; i < params.length; i++) {
+                  param_cnt++;
+                  add_parameter(param_cnt, params[i]['name'], params[i]['value']);
+                };
+              }
+            }
+          });
+        });
+
+        var header_cnt = 0;
+        $("#add_api_headers").click(function() {
+          var input_len = $("#headers_table input").size();
+          header_cnt++;
+          add_header(header_cnt, "", "")
+        });
+
+        function params_2_str(params) {
+          var str = "";
+          for (var i = 0; i < params.length; i++) {
+            var p = params[i];
+            if (p.name) {
+              str = str + "&" + p.name + "=" + p.value
+            }
+          }
+          if (str.length > 1) {
+            str = str.substring(1)
+          }
+          return str
+        }
+
+        function str_2_params(str) {
+          try {
+            var params = new Array();
+            var ps = str.split("&");
+            var pv = null;
+            for (var i = 0; i < ps.length; i++) {
+              pv = ps[i].split("=");
+              params.push({
+                name: pv[0],
+                value: pv[1],
+                method: "post"
+              })
+            }
+            return params
+          } catch(e) {
+            return false
+          }
+        }
+
+        function load_cookie() {
+          var http_url = $.cookie("http_url");
+          var method = $.cookie("method");
+          var params = $.cookie("params");
+          if (is_empty(params)) {
+            params = false
+          } else {
+            params = str_2_params(params)
+          }
+          var headers = $.cookie("headers");
+          if (is_empty(headers)) {
+            headers = false
+          } else {
+            headers = str_2_params(headers)
+          }
+          var header_on = $.cookie("header_on");
+          var body_on = $.cookie("body_on");
+          if (!header_on) {
+            $("input[name=body_headers]").click()
+          }
+          if (!body_on) {
+            $("input[name=body_params]").click()
+          }
+          if (http_url) {
+            $("#http_url_input").val(http_url)
+          }
+          if (method) {
+            $("#api_method").val(method)
+          }
+          if (params) {
+            for (var i = 0; i < params.length; i++) {
+              param_cnt++;
+              add_parameter(param_cnt, params[i]["name"], params[i]["value"])
+            }
+          }
+          if (headers) {
+            for (var i = 0; i < headers.length; i++) {
+              header_cnt++;
+              add_header(header_cnt, headers[i]["name"], headers[i]["value"])
+            }
+          }
+        }
+        if ($("#login_uid") && $("#login_uid").length > 0) {
+          load_cookie()
+        }
+        $("#http_test").click(function() {
+          var http_url = $("#http_url_input").val();
+          var method = $("#api_method").val();
+          var params = get_all_parameter();
+          var headers = get_all_header();
+          $.cookie("http_url", http_url);
+          $.cookie("method", method);
+          $.cookie("params", params_2_str(params));
+          $.cookie("headers", params_2_str(headers));
+          if (is_empty(http_url)) {
+            alert("接口链接为空，请填写后再请求！");
+            return
+          }
+          if (params === false) {
+            alert("参数填写为空，请填写完整之后再试！");
+            return
+          }
+          if (headers === false) {
+            alert("Header填写为空，请填写完整之后再试！");
+            return
+          }
+          $("#response_header").html("执行中，请等待...");
+          $("#output").val("");
+          $.post("/moni", {
+            url: http_url,
+            params: params,
+            method: method,
+            headers: headers
+          },
+          function(data) {
+            if (data.Success == 1) {
+              result_text = data.Message;
+              if (typeof(result_text) == "object") {
+                result_text = JSON.stringify(result_text);
+              }
+              var json = null;
+              try {
+                json = JSON.parse(result_text)
+              } catch(e) {
+                json = null
+              }
+              json = null; //add by hustcc
+              if (json == null) {
+                // $("#output").append("<pre></pre>");
+                $("#output").val(result_text)
+              } else {
+                JSONFormatter.format(json, {
+                  appendTo: "#output",
+                  collapse: true,
+                  list_id: "json"
+                })
+              }
+              $("#response_header").html("执行时间：" + data.Time);
+              $("#response_header").append("<pre></pre>");
+              $("#response_header pre").text(data.Header)
+            } else {
+              // $("#output").append("<pre></pre>");
+              $("#output").val(data.Message);
+              $("#response_header").html("<span class='red'>执行失败</span>");
+            }
+          },
+          "json")
+        });
+
+        function del_param(obj) {
+          $(obj).parent().parent().remove()
+        }
+
+        function is_empty(str) {
+          if (str == null || str == "" || str == "undefined") {
+            return true
+          }
+          return false
+        };
+        headers_togg();
+        </script>
+      <div class='divider'></div>
+      <h4 class='explainer'>Requests Header | Http Header</h4>
+      <table class="table table-bordered content-table">
+        <thead>
+          <tr>
+            <th>Header</th>
+            <th width="35%">解释</th>
+            <th width="40%">示例</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Accept</td>
+            <td>指定客户端能够接收的内容类型</td>
+            <td>Accept: text/plain, text/html</td></tr>
+          <tr>
+            <td>Accept-Charset</td>
+            <td>浏览器可以接受的字符编码集。</td>
+            <td>Accept-Charset: iso-8859-5</td></tr>
+          <tr>
+            <td>Accept-Encoding</td>
+            <td>指定浏览器可以支持的web服务器返回内容压缩编码类型。</td>
+            <td>Accept-Encoding: compress, gzip</td></tr>
+          <tr>
+            <td>Accept-Language</td>
+            <td>浏览器可接受的语言</td>
+            <td>Accept-Language: en,zh</td></tr>
+          <tr>
+            <td>Accept-Ranges</td>
+            <td>可以请求网页实体的一个或者多个子范围字段</td>
+            <td>Accept-Ranges: bytes</td></tr>
+          <tr>
+            <td>Authorization</td>
+            <td>HTTP授权的授权证书</td>
+            <td>Authorization: Basic QWxhZGRpbjpvcGVuIHNlc2FtZQ==</td></tr>
+          <tr>
+            <td>Cache-Control</td>
+            <td>指定请求和响应遵循的缓存机制</td>
+            <td>Cache-Control: no-cache</td></tr>
+          <tr>
+            <td>Connection</td>
+            <td>表示是否需要持久连接。（HTTP 1.1默认进行持久连接）</td>
+            <td>Connection: close</td></tr>
+          <tr>
+            <td>Cookie</td>
+            <td>HTTP请求发送时，会把保存在该请求域名下的所有cookie值一起发送给web服务器。</td>
+            <td>Cookie: $Version=1; Skin=new;</td></tr>
+          <tr>
+            <td>Content-Length</td>
+            <td>请求的内容长度</td>
+            <td>Content-Length: 348</td></tr>
+          <tr>
+            <td>Content-Type</td>
+            <td>请求的与实体对应的MIME信息</td>
+            <td>Content-Type: application/x-www-form-urlencoded</td></tr>
+          <tr>
+            <td>Date</td>
+            <td>请求发送的日期和时间</td>
+            <td>Date: Tue, 15 Nov&nbsp;2010 08:12:31 GMT</td></tr>
+          <tr>
+            <td>Expect</td>
+            <td>请求的特定的服务器行为</td>
+            <td>Expect: 100-continue</td></tr>
+          <tr>
+            <td>From</td>
+            <td>发出请求的用户的Email</td>
+            <td>From: user@email.com</td></tr>
+          <tr>
+            <td>Host</td>
+            <td>指定请求的服务器的域名和端口号</td>
+            <td>Host: www.zcmhi.com</td></tr>
+          <tr>
+            <td>If-Match</td>
+            <td>只有请求内容与实体相匹配才有效</td>
+            <td>If-Match: “737060cd8c284d8af7ad3082f209582d”</td></tr>
+          <tr>
+            <td>If-Modified-Since</td>
+            <td>如果请求的部分在指定时间之后被修改则请求成功，未被修改则返回304代码</td>
+            <td>If-Modified-Since: Sat, 29 Oct 2010 19:43:31 GMT</td></tr>
+          <tr>
+            <td>If-None-Match</td>
+            <td>如果内容未改变返回304代码，参数为服务器先前发送的Etag，与服务器回应的Etag比较判断是否改变</td>
+            <td>If-None-Match: “737060cd8c284d8af7ad3082f209582d”</td></tr>
+          <tr>
+            <td>If-Range</td>
+            <td>如果实体未改变，服务器发送客户端丢失的部分，否则发送整个实体。参数也为Etag</td>
+            <td>If-Range: “737060cd8c284d8af7ad3082f209582d”</td></tr>
+          <tr>
+            <td>If-Unmodified-Since</td>
+            <td>只在实体在指定时间之后未被修改才请求成功</td>
+            <td>If-Unmodified-Since: Sat, 29 Oct 2010 19:43:31 GMT</td></tr>
+          <tr>
+            <td>Max-Forwards</td>
+            <td>限制信息通过代理和网关传送的时间</td>
+            <td>Max-Forwards: 10</td></tr>
+          <tr>
+            <td>Pragma</td>
+            <td>用来包含实现特定的指令</td>
+            <td>Pragma: no-cache</td></tr>
+          <tr>
+            <td>Proxy-Authorization</td>
+            <td>连接到代理的授权证书</td>
+            <td>Proxy-Authorization: Basic QWxhZGRpbjpvcGVuIHNlc2FtZQ==</td></tr>
+          <tr>
+            <td>Range</td>
+            <td>只请求实体的一部分，指定范围</td>
+            <td>Range: bytes=500-999</td></tr>
+          <tr>
+            <td>Referer</td>
+            <td>先前网页的地址，当前请求网页紧随其后,即来路</td>
+            <td>Referer: http://www.zcmhi.com/archives/71.html</td></tr>
+          <tr>
+            <td>TE</td>
+            <td>客户端愿意接受的传输编码，并通知服务器接受接受尾加头信息</td>
+            <td>TE: trailers,deflate;q=0.5</td></tr>
+          <tr>
+            <td>Upgrade</td>
+            <td>向服务器指定某种传输协议以便服务器进行转换（如果支持）</td>
+            <td>Upgrade: HTTP/2.0, SHTTP/1.3, IRC/6.9, RTA/x11</td></tr>
+          <tr>
+            <td>User-Agent</td>
+            <td>User-Agent的内容包含发出请求的用户信息</td>
+            <td>User-Agent: Mozilla/5.0 (Linux; X11)</td></tr>
+          <tr>
+            <td>Via</td>
+            <td>通知中间网关或代理服务器地址，通信协议</td>
+            <td>Via: 1.0 fred, 1.1 nowhere.com (Apache/1.1)</td></tr>
+          <tr>
+            <td>Warning</td>
+            <td>关于消息实体的警告信息</td>
+            <td>Warn: 199 Miscellaneous warning</td></tr>
+        </tbody>
+      </table>
+      <div class='divider'></div>
+      <h4 class='explainer'>Responses 部分 | Http Header</h4>
+      <table class="table table-bordered content-table">
+        <thead>
+          <tr>
+            <th>Header</th>
+            <th width="35%">解释</th>
+            <th width="40%">示例</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Accept-Ranges</td>
+            <td>表明服务器是否支持指定范围请求及哪种类型的分段请求</td>
+            <td>Accept-Ranges: bytes</td></tr>
+          <tr>
+            <td>Age</td>
+            <td>从原始服务器到代理缓存形成的估算时间（以秒计，非负）</td>
+            <td>Age: 12</td></tr>
+          <tr>
+            <td>Allow</td>
+            <td>对某网络资源的有效的请求行为，不允许则返回405</td>
+            <td>Allow: GET, HEAD</td></tr>
+          <tr>
+            <td>Cache-Control</td>
+            <td>告诉所有的缓存机制是否可以缓存及哪种类型</td>
+            <td>Cache-Control: no-cache</td></tr>
+          <tr>
+            <td>Content-Encoding</td>
+            <td>web服务器支持的返回内容压缩编码类型。</td>
+            <td>Content-Encoding: gzip</td></tr>
+          <tr>
+            <td>Content-Language</td>
+            <td>响应体的语言</td>
+            <td>Content-Language: en,zh</td></tr>
+          <tr>
+            <td>Content-Length</td>
+            <td>响应体的长度</td>
+            <td>Content-Length: 348</td></tr>
+          <tr>
+            <td>Content-Location</td>
+            <td>请求资源可替代的备用的另一地址</td>
+            <td>Content-Location: /index.htm</td></tr>
+          <tr>
+            <td>Content-MD5</td>
+            <td>返回资源的MD5校验值</td>
+            <td>Content-MD5: Q2hlY2sgSW50ZWdyaXR5IQ==</td></tr>
+          <tr>
+            <td>Content-Range</td>
+            <td>在整个返回体中本部分的字节位置</td>
+            <td>Content-Range: bytes 21010-47021/47022</td></tr>
+          <tr>
+            <td>Content-Type</td>
+            <td>返回内容的MIME类型</td>
+            <td>Content-Type: text/html; charset=utf-8</td></tr>
+          <tr>
+            <td>Date</td>
+            <td>原始服务器消息发出的时间</td>
+            <td>Date: Tue, 15 Nov 2010 08:12:31 GMT</td></tr>
+          <tr>
+            <td>ETag</td>
+            <td>请求变量的实体标签的当前值</td>
+            <td>ETag: “737060cd8c284d8af7ad3082f209582d”</td></tr>
+          <tr>
+            <td>Expires</td>
+            <td>响应过期的日期和时间</td>
+            <td>Expires: Thu, 01 Dec 2010 16:00:00 GMT</td></tr>
+          <tr>
+            <td>Last-Modified</td>
+            <td>请求资源的最后修改时间</td>
+            <td>Last-Modified: Tue, 15 Nov 2010 12:45:26 GMT</td></tr>
+          <tr>
+            <td>Location</td>
+            <td>用来重定向接收方到非请求URL的位置来完成请求或标识新的资源</td>
+            <td>Location: http://www.zcmhi.com/archives/94.html</td></tr>
+          <tr>
+            <td>Pragma</td>
+            <td>包括实现特定的指令，它可应用到响应链上的任何接收方</td>
+            <td>Pragma: no-cache</td></tr>
+          <tr>
+            <td>Proxy-Authenticate</td>
+            <td>它指出认证方案和可应用到代理的该URL上的参数</td>
+            <td>Proxy-Authenticate: Basic</td></tr>
+          <tr>
+            <td>refresh</td>
+            <td>应用于重定向或一个新的资源被创造，在5秒之后重定向（由网景提出，被大部分浏览器支持）</td>
+            <td>Refresh: 5; url=http://www.atool.org/httptest.php</td></tr>
+          <tr>
+            <td>Retry-After</td>
+            <td>如果实体暂时不可取，通知客户端在指定时间之后再次尝试</td>
+            <td>Retry-After: 120</td></tr>
+          <tr>
+            <td>Server</td>
+            <td>web服务器软件名称</td>
+            <td>Server: Apache/1.3.27 (Unix) (Red-Hat/Linux)</td></tr>
+          <tr>
+            <td>Set-Cookie</td>
+            <td>设置Http Cookie</td>
+            <td>Set-Cookie: UserID=JohnDoe; Max-Age=3600; Version=1</td></tr>
+          <tr>
+            <td>Trailer</td>
+            <td>指出头域在分块传输编码的尾部存在</td>
+            <td>Trailer: Max-Forwards</td></tr>
+          <tr>
+            <td>Transfer-Encoding</td>
+            <td>文件传输编码</td>
+            <td>
+              <span style="font-family: monospace;">
+                <span style="font-family: Georgia,'Times New Roman','Bitstream Charter',Times,serif;">Transfer-Encoding:chunked</span></span>
+            </td>
+          </tr>
+          <tr>
+            <td>Vary</td>
+            <td>告诉下游代理是使用缓存响应还是从原始服务器请求</td>
+            <td>Vary: *</td></tr>
+          <tr>
+            <td>Via</td>
+            <td>告知代理客户端响应是通过哪里发送的</td>
+            <td>Via: 1.0 fred, 1.1 nowhere.com (Apache/1.1)</td></tr>
+          <tr>
+            <td>Warning</td>
+            <td>警告实体可能存在的问题</td>
+            <td>Warning: 199 Miscellaneous warning</td></tr>
+          <tr>
+            <td>WWW-Authenticate</td>
+            <td>表明客户端请求实体应该使用的授权方案</td>
+            <td>WWW-Authenticate: Basic</td></tr>
+        </tbody>
+      </table>
+      <div class='divider'></div>
+      <h4 class='explainer'>在线接口测试工具 | Introduce</h4>
+      <ul class="new_tools_list">
+        <li>接口测试是测试系统组件间接口的一种测试。接口测试主要用于检测外部系统与系统之间以及内部各个子系统之间的交互点。测试的重点是要检查数据的交换，传递和控制管理过程，以及系统间的相互逻辑依赖关系等。</li>
+        <li>接口测试一般以用于多系统间交互开发，或者拥有多个子系统的应用系统开发的测试。接口测试适用于为其他系统提供服务的底层框架系统和中心服务系统，主要测试这些系统对外部提供的接口，验证其正确性和稳定性。</li>
+        <li>最简单的应用就是，使用Web http的方式，为APP提供数据接口，这些接口具有一定的动态性，采用传入一定的参数，接口通过参数获取不同的数据返回给使用者，参数传入的方式有GET和POST方式两种，使用浏览器可以直接模拟GET请求，但是POST请求却无能为力，只能编写脚本测试，这就导致接口测试非常麻烦。</li>
+        <li>本工具提供任意接口的HTTP GET和POST测试，并且提供测试返回值，接口返回时间，并且已经对接口请求的异常状态进行获取，然后反馈给用户。</li>
+        <li>备注：接口执行时间与本网站服务器有关，仅供参考。</li></ul>
+      <div class='divider'></div>
+      <h4 class="explainer">推荐功能 / 猜你喜欢 | Suggest</h4>
+
+      <div class="site-nav">
+        <h4 class="site-title long-title">便民工具 - 在线小游戏</h4>
+
+      </div>
+      <div class='divider'></div>
+    
+      <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+      
+      <div class='divider'></div>
+      <div class="row footer">版权所有，保留一切权利！©2015
+        <a href="/sitemap.xml" target="_blank">在线工具</a>&nbsp; 【6666666666】
+        <br />
+        </div>
+      <style type="text/css">.share_weixin{position:fixed;top:100px;left:50%;margin-left:-121px;padding:10px 20px;width:200px;border:1px solid #d9d9d9;background:#fff;text-align:center} .share_weixin .qrcode{margin:10px 0} .popup_close{position:absolute;top:5px;right:10px;display:block;width:20px;height:20px;font-size:20px} .full_screen_bg{position:fixed;top:0;right:0;bottom:0;left:0;background:#f1f1f1;background:rgba(0,0,0,0.39)}</style>
+      <div id="donate_qrcode"></div>
+      <script type="text/javascript">function donate_alipay() {
+          //        document.getElementById("donate_qrcode").innerHTML = '<div class="full_screen_bg" onclick="this.parentNode.innerHTML=\' \';"></div><div class="share_weixin"><a href="javascript:;" onclick="this.parentNode.parentNode.innerHTML=\' \';" class="popup_close">×</a><p>使用支付宝扫描</p><img class="qrcode" width="200" height="200" src="http://cdn.atool.org/res/alipay_atool.png" /><p>打开支付宝扫一扫，对准二维码扫描即可进行赞助。</p></div>';
+          return false;
+        }</script>
+      <script src="res/placeholder.min.js"></script>
+      <style type="text/css">.support-holder {display: none;}</style>
+      <!-- <script type='text/javascript'>
+      //     (function(m, ei, q, i, a, j, s) {
+      //         m[a] = m[a] || function() {
+      //             (m[a].a = m[a].a || []).push(arguments)
+      //         };
+      //         j = ei.createElement(q),
+      //             s = ei.getElementsByTagName(q)[0];
+      //         j.async = true;
+      //         j.charset = 'UTF-8';
+      //         j.src = i;
+      //         s.parentNode.insertBefore(j, s)
+      //     })(window, document, 'script', '//eco-api.meiqia.com/dist/meiqia.js', '_MEIQIA');
+      //     _MEIQIA('entId', 4714);
+      // </script>-->
+     
+    </div>
+    <!-- <div class='navbar' style="position: fixed;left:0;right:0;bottom: 0;margin-bottom:0;">
+    <div class='container'>
+    <h6 class='pull-left green'>公告：最近逐步对网站进行改版，以提高手机访问的体验。如果遇到页面样式风格不一致，请不要惊慌！</h6></div>
+    </div> -->
+  </body>
+
+</html>
